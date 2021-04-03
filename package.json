@@ -7,6 +7,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.9",
+    "classnames": "^2.3.1",
     "next": "latest",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
@@ -15,7 +17,9 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.8.0"
+    "babel-plugin-styled-components": "^1.8.0",
+    "eslint": "^7.23.0",
+    "eslint-plugin-react": "^7.23.1"
   },
   "license": "MIT"
 }

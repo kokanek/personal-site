@@ -17,18 +17,16 @@ const CloseIcon = () => (
 export const Sidebar = ({ showSidebar, closeSidebar, rest }) => {
 
     return (
-        <SidebarContainer show={true} className="Sidebar">
+        <SidebarContainer show={showSidebar} className="Sidebar">
             <SidebarLogo />
             <SidebarHeader>
                 <SidebarLogoLink to="/">
-                    {'logo'}
                     <SidebarLogo />
                 </SidebarLogoLink>
                 <SidebarCloseButton onClick={closeSidebar}>
                     <CloseIcon />
                 </SidebarCloseButton>
             </SidebarHeader>
-            {'sidebar test'}
             <Nav {...rest} closeSidebar={closeSidebar} />
         </SidebarContainer>
     )

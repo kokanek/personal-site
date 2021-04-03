@@ -9,9 +9,9 @@ const PageLink = ({ page, children, className, activeClassName, onClick }) => (
 )
 
 PageLink.propTypes = {
-    page: PropTypes.shape({
-        path: PropTypes.string,
-    }).isRequired,
+  page: PropTypes.shape({
+      path: PropTypes.string,
+  }),
 }
 
 export default PageLink

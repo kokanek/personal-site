@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled, { css, useTheme } from 'styled-components';
 import classNames from 'classnames'
 import Pagination from '../components/Pagination';
@@ -8,16 +8,18 @@ import { mq, spacing } from '../theme'
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
-  const showSidebar = true;
+  const [showSidebar, toggleSidebar] = useState(false);
   const theme = useTheme();
-  
+
+  const closeSidebar = () => toggleSidebar(false);
+
   return (
     <>
       <Page
         showSidebar={showSidebar}
         theme='DefaultTheme'
       >
-        <Sidebar showSidebar={showSidebar} closeSidebar={() => {}} />
+        <Sidebar showSidebar={showSidebar} closeSidebar={closeSidebar} />
         <PageContent className="PageContent">
           <Pagination toggleSidebar={() => {}} position="top" />
           <PageMain>

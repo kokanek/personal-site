@@ -6,11 +6,11 @@ import { mq, spacing } from '../theme'
 import Hamburger from './Hamburger'
 import { usePageContext } from '../helpers/pageContext'
 import PaginationLink from './PaginationLink'
+import LanguageSwitcher from '../helpers/LanguageSwitcher'
 
 const Pagination = ({ toggleSidebar }) => {
     const context = usePageContext()
 
-    console.log('pagination context: ', context);
     let previous = <span />
     if (context.previous !== undefined && !isEmpty(context.previous)) {
         previous = (
@@ -31,9 +31,10 @@ const Pagination = ({ toggleSidebar }) => {
         <Container className="Pagination">
             {previous}
             <MiddleContent>
-                <SidebarToggle onClick={() => {}}>
+                <SidebarToggle className="SidebarToggle" onClick={toggleSidebar}>
                     <Hamburger />
                 </SidebarToggle>
+                <LanguageSwitcher />
             </MiddleContent>
             {next}
         </Container>
@@ -65,7 +66,7 @@ const MiddleContent = styled.div`
 `
 
 const SidebarToggle = styled.button`
-    background: ${(props) => {console.log('theme props', props.theme); return props.theme.colors.background}};
+    background: ${(props) => props.theme.colors.background};
     padding: 0 ${spacing(0.5)};
     cursor: pointer;
     border: 0;

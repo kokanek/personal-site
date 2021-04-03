@@ -5,7 +5,10 @@ import { usePageContext } from '../../helpers/pageContext'
 import PageLink from '../PageLink'
 import { getPageLabelKey } from '../../helpers/pageHelpers'
 
-const filteredNav = [{id: 1, page: 'test'}, {id: 2, page: 'test2'}]
+const filteredNav = [
+  {id: 'introduction', path: '/', defaultBlockType: 'default', is_hidden: false, next: {defaultBlockType: 'default', id: 'tshirt', pageIndex: 1, path: "/tshirt/", showTitle: false}}, 
+  {id: 'tshirt', path: '/test'}
+]
 
 const StyledPageLink = styled(PageLink)`
     display: flex;
@@ -13,8 +16,8 @@ const StyledPageLink = styled(PageLink)`
     margin: 0 0 ${spacing(0.33)} 0;
     font-size: ${(props) =>
         props.depth > 0
-            ? 12
-            : 14};
+            ? props.theme.typography.size.smallish
+            : props.theme.typography.size.medium};
     font-weight: ${(props) => (props.depth === 0 ? 800 : 400)};
 
     /* & > span {
@@ -65,10 +68,11 @@ const StyledPageLink = styled(PageLink)`
 `
 
 const NavItem = ({ page, currentPath, closeSidebar, isHidden = false, depth = 0 }) => {
-    const isActive = currentPath.indexOf(page.path) !== -1
-    const hasChildren = page.children && page.children.length > 0
+    const isActive = true
+    const hasChildren = false
     const displayChildren = hasChildren > 0 && isActive
 
+    console.log('nav item')
     return (
         <>
             <StyledPageLink
@@ -78,7 +82,7 @@ const NavItem = ({ page, currentPath, closeSidebar, isHidden = false, depth = 0 
                 depth={depth}
                 isHidden={isHidden}
             >
-              {getPageLabelKey(page)}
+              'hello'
             </StyledPageLink>
             {hasChildren && (
                 <>
@@ -101,13 +105,15 @@ const NavItem = ({ page, currentPath, closeSidebar, isHidden = false, depth = 0 
 export const Nav = ({ closeSidebar }) => {
     const context = usePageContext()
 
+    console.log('filterednav: ', context.currentPath, closeSidebar);
     return (
         <NavContainer>
+            {'nav container'}
             {filteredNav.map((page, i) => (
                 <NavItem
                     key={i}
                     page={page}
-                    currentPath={'test'}
+                    currentPath={context.currentPath}
                     closeSidebar={closeSidebar}
                 />
             ))}
@@ -126,4 +132,9 @@ const NavContainer = styled.div`
         align-items: center;
         overflow-y: scroll;
     }
+`
+
+const LanguageSwitcherWrapper = styled.div`
+    position: relative;
+    width: 100%;
 `

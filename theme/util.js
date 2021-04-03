@@ -1,5 +1,5 @@
 export const spacing = (multiplier = 1) => ({ theme }) =>
-    `${16 * multiplier}px`
+    `${theme.dimensions.spacing * multiplier}px`
 
 export const fontSize = (size) => ({ theme }) => theme.typography.size[size]
 

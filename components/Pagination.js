@@ -10,6 +10,7 @@ import PaginationLink from './PaginationLink'
 const Pagination = ({ toggleSidebar }) => {
     const context = usePageContext()
 
+    console.log('pagination context: ', context);
     let previous = <span />
     if (context.previous !== undefined && !isEmpty(context.previous)) {
         previous = (
@@ -29,9 +30,8 @@ const Pagination = ({ toggleSidebar }) => {
     return (
         <Container className="Pagination">
             {previous}
-            {'test'}
             <MiddleContent>
-                <SidebarToggle className="SidebarToggle" onClick={toggleSidebar}>
+                <SidebarToggle onClick={() => {}}>
                     <Hamburger />
                 </SidebarToggle>
             </MiddleContent>
@@ -65,7 +65,7 @@ const MiddleContent = styled.div`
 `
 
 const SidebarToggle = styled.button`
-    background: ${(props) => props.theme.colors.background};
+    background: ${(props) => {console.log('theme props', props.theme); return props.theme.colors.background}};
     padding: 0 ${spacing(0.5)};
     cursor: pointer;
     border: 0;

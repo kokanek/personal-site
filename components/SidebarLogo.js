@@ -4,14 +4,14 @@ import { LogoCell } from './LogoCell'
 
 export const SidebarLogo = () => {
     const theme = useTheme()
-    console.log('the theme is: ', theme);
 
+    console.log('the theme here: ', theme)
     return (
         <Container>
-            <LogoCell text="Ka" color='cyan' index={0} />
-            <LogoCell text="Ko" color='cyan' index={1} />
-            <LogoCell text="Com" color='red' index={2} />
-            <LogoCell text="Sim" color='red' index={3} />
+            <LogoCell text="Ka" color={theme.colors.text} index={0} />
+            <LogoCell text="Ko" color={theme.colors.text} index={1} />
+            <LogoCell text="Com" color={theme.colors.contrast} index={2} />
+            <LogoCell text="Sim" color={theme.colors.contrast} index={3} />
         </Container>
     )
 }

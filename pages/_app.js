@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import Head from '../components/Head'
 import { GlobalStyle } from '../theme';
 import themes from '../theme/themes/index'
 
@@ -51,12 +52,13 @@ const ThemedLayout = (props) => {
 
 export default function App({ Component, pageProps }) {
 
-  const [themeId, setThemeId] = useState('test')
+  const [themeId, setThemeId] = useState('state_of_js')
 
   return (
     <>
       <ThemeProvider theme={themes[themeId]}>
         <GlobalStyle />
+        <Head />
         <Component {...pageProps} />
       </ThemeProvider>
     </>

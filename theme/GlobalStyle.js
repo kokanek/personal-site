@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
         background: ${color('background')};
         color: ${color('text')};
         padding: 0;
+        margin: 0;
         font-feature-settings: 'liga' 0;
         line-height: 1.7;
         ${primaryFontMixin};

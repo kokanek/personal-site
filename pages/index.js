@@ -10,8 +10,7 @@ import styles from '../styles/Home.module.scss';
 export default function Home() {
   const showSidebar = true;
   const theme = useTheme();
-
-  console.log('theme is: ', theme);
+  
   return (
     <>
       <Page

@@ -26,7 +26,11 @@ export default function Home() {
           <PageMain>
               {/* <PageMetaDebug /> */}
               <IntroLogo />
-              <h1>This is the main content</h1>
+              <h1>This is the YouTube content</h1>
+              <h2>This is the h2 content</h2>
+              <h3>This is the h2 content</h3>
+              <h4>This is the h2 content</h4>
+              <p>We'll be doing a special <a href="/test">launch livestream in collaboration</a> with the folks at the <span color="contrast">CodeItLive Twitch</span> channel. Join us along with guests such as Sarah Drasner, Josh W. Comeau, and Kent C. Dodds to discuss this past year's JavaScript trends!</p>
               <NewsletterBlock heading="Newsletter!" description="this is the best newsletter ever"/>
           </PageMain>
         </PageContent>
@@ -74,3 +78,5 @@ const PageMain = styled.main`
         padding: ${spacing(3)};
     }
 `
+
+

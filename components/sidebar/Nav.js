@@ -6,8 +6,10 @@ import PageLink from '../PageLink'
 import { getPageLabelKey } from '../../helpers/pageHelpers'
 
 const filteredNav = [
-  {id: 'introduction', path: '/', defaultBlockType: 'default', is_hidden: false, next: {defaultBlockType: 'default', id: 'tshirt', pageIndex: 1, path: "/tshirt/", showTitle: false}}, 
-  {id: 'tshirt', path: '/test'}
+  {id: 'introduction', path: '/', next: {id: 'tshirt', path: "/tshirt/", showTitle: true}}, 
+  {id: 'tshirt', path: '/test', next: {id: 'projects', path: "/projects/", showTitle: true}},
+  {id: 'projects', path: '/projects', next: {id: 'youtube', path: "/projects/", showTitle: true}},
+  {id: 'youtube', path: '/youtube'}
 ]
 
 const StyledPageLink = styled(PageLink)`
@@ -67,12 +69,12 @@ const StyledPageLink = styled(PageLink)`
         })}
 `
 
-const NavItem = ({ page, currentPath, closeSidebar, isHidden = false, depth = 0 }) => {
+const NavItem = ({ key, page, currentPath, closeSidebar, isHidden = false, depth = 0 }) => {
     const isActive = true
     const hasChildren = false
     const displayChildren = hasChildren > 0 && isActive
 
-    console.log('nav item')
+    console.log('**********nav item page', page);
     return (
         <>
             <StyledPageLink
@@ -82,7 +84,7 @@ const NavItem = ({ page, currentPath, closeSidebar, isHidden = false, depth = 0 
                 depth={depth}
                 isHidden={isHidden}
             >
-              'hello'
+              {page.id}
             </StyledPageLink>
             {hasChildren && (
                 <>
@@ -108,7 +110,6 @@ export const Nav = ({ closeSidebar }) => {
     console.log('filterednav: ', context.currentPath, closeSidebar);
     return (
         <NavContainer>
-            {'nav container'}
             {filteredNav.map((page, i) => (
                 <NavItem
                     key={i}
@@ -132,9 +133,4 @@ const NavContainer = styled.div`
         align-items: center;
         overflow-y: scroll;
     }
-`
-
-const LanguageSwitcherWrapper = styled.div`
-    position: relative;
-    width: 100%;
 `

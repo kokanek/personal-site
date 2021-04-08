@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from './LocaleLink'
+import Link from 'next/link'
 
 const PageLink = ({ page, children, className, activeClassName, onClick }) => (
-    <Link to={page.path} className={className} activeClassName={activeClassName} onClick={onClick}>
-        <span>{children}</span>
+  <div>
+    <Link href={page.path}>
+      <a>{children}</a>
     </Link>
+  </div>
 )
 
 PageLink.propTypes = {

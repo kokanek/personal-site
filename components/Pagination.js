@@ -10,6 +10,7 @@ import LanguageSwitcher from '../helpers/LanguageSwitcher'
 
 const Pagination = ({ toggleSidebar }) => {
     const context = usePageContext()
+    console.log('context in pagination :', context);
 
     let previous = <span />
     if (context.previous !== undefined && !isEmpty(context.previous)) {

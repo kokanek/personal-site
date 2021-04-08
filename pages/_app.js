@@ -3,6 +3,8 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Head from '../components/Head'
 import { GlobalStyle } from '../theme';
 import themes from '../theme/themes/index'
+import { mergePageContext } from '../helpers/pageHelpers'
+import { PageContextProvider } from '../helpers/pageContext'
 
 // const theme = {
 //   colors: {

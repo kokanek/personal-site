@@ -8,24 +8,23 @@ import { usePageContext } from '../helpers/pageContext'
 import PaginationLink from './PaginationLink'
 import LanguageSwitcher from '../helpers/LanguageSwitcher'
 
-const Pagination = ({ toggleSidebar }) => {
-    const context = usePageContext()
-    console.log('context in pagination :', context);
-
+const Pagination = ({ toggleSidebar, nextLink, prevLink }) => {
+   
+    console.log('next link: ', nextLink);
     let previous = <span />
-    if (context.previous !== undefined && !isEmpty(context.previous)) {
+    if (prevLink !== undefined && !isEmpty(prevLink)) {
         previous = (
             <PaginationLink
                 className="PaginationPrevious"
-                page={context.previous}
+                page={prevLink}
                 type="previous"
             />
         )
     }
 
     let next = <span />
-    if (context.next !== undefined && !isEmpty(context.next)) {
-        next = <PaginationLink className="PaginationNext" page={context.next} type="next" />
+    if (nextLink !== undefined && !isEmpty(nextLink)) {
+        next = <PaginationLink className="PaginationNext" page={nextLink} type="next" />
     }
 
     return (

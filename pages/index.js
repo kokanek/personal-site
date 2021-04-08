@@ -8,11 +8,17 @@ import { mq, spacing } from '../theme'
 import { IntroLogo } from '../components/logo/IntroLogo';
 import styles from '../styles/Home.module.scss';
 
+const next = {id: 'tshirt', path: '/test', next: {id: 'projects', path: "/projects/", showTitle: true}}
+
 export default function Home() {
   const [showSidebar, toggleSidebar] = useState(false);
   const theme = useTheme();
 
   const closeSidebar = () => toggleSidebar(false);
+  const toggleSidebarState = () => {
+    console.log('toggle sidebar called');
+    toggleSidebar(!showSidebar)
+  };
 
   return (
     <>
@@ -22,7 +28,7 @@ export default function Home() {
       >
         <Sidebar showSidebar={showSidebar} closeSidebar={closeSidebar} />
         <PageContent className="PageContent">
-          <Pagination toggleSidebar={() => {}} position="top" />
+          <Pagination toggleSidebar={toggleSidebarState} nextLink={next} position="top" />
           <PageMain>
               {/* <PageMetaDebug /> */}
               <IntroLogo />

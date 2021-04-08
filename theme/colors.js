@@ -5,8 +5,8 @@ export default {
     greyMediumer: '#616868',
     greyMediumest: '#5c6069',
     greyDark: '#3F4141',
-    greyDarkish: '#2a2d33',
-    greyDarker: '#001527',
+    greyDarkish: '#002035', // this is also replaced by a little lighter blue
+    greyDarker: '#001527', // this is replaced by blue
 
     greyTeal: '#a3cacd',
     greyTealDark: '#789B9D',

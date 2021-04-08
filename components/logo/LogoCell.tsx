@@ -1,19 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
-import { mq, color } from 'core/theme'
+import { mq, color } from '../../theme'
 
 interface LogoCellProps {
-    index: number
-    text: string
-    color: string
+  index: number
+  text: string
+  color: string
 }
 
 export const LogoCell = ({ index, text, color: textColor }: LogoCellProps) => (
-    <Container className="LogoCell" style={{ color: textColor }}>
-        <Index>{index}</Index>
-        {text}
-    </Container>
+  <Container className="LogoCell" style={{ color: textColor }}>
+    <Index>{index}</Index>
+    <CellText>{text}</CellText>
+  </Container>
 )
+
+const CellText = styled.text`
+    font-weight: 500;
+    pointer-events: none;
+`
 
 const Container = styled.span`
     width: 67px;

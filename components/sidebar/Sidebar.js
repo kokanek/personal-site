@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Link from '../LocaleLink'
 import { mq, color, screenReadersOnlyMixin } from '../../theme'
 import { Nav } from './Nav'
-import { SidebarLogo } from '../SidebarLogo'
+import { SidebarLogo } from '../logo/SidebarLogo'
 
 const CloseIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -18,11 +18,8 @@ export const Sidebar = ({ showSidebar, closeSidebar, rest }) => {
 
     return (
         <SidebarContainer show={showSidebar} className="Sidebar">
-            <SidebarLogo />
             <SidebarHeader>
-                <SidebarLogoLink to="/">
-                    <SidebarLogo />
-                </SidebarLogoLink>
+                <SidebarLogo />
                 <SidebarCloseButton onClick={closeSidebar}>
                     <CloseIcon />
                 </SidebarCloseButton>

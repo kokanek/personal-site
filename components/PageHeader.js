@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { usePageContext } from '../helpers/pageContext'
-import { mq } from 'core/theme'
+import { mq } from '../theme'
 
 const PageHeader = () => {
     const page = usePageContext()

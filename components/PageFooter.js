@@ -1,7 +1,7 @@
 import React from 'react'
 import isEmpty from 'lodash/isEmpty'
 import styled from 'styled-components'
-import { mq, spacing, fontSize } from 'core/theme'
+import { mq, spacing, fontSize } from '../theme'
 import { usePageContext } from 'core/helpers/pageContext'
 import Link from 'core/components/LocaleLink'
 import Button from 'core/components/Button'

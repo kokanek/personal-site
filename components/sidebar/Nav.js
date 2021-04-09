@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import styled, { css } from 'styled-components'
 import { mq, fancyLinkMixin, spacing } from '../../theme'
 import { usePageContext } from '../../helpers/pageContext'
@@ -6,10 +7,10 @@ import PageLink from '../PageLink'
 import { getPageLabelKey } from '../../helpers/pageHelpers'
 
 const filteredNav = [
-  {id: 'introduction', path: '/', next: {id: 'tshirt', path: "/tshirt/", showTitle: true}}, 
-  {id: 'tshirt', path: '/test', next: {id: 'projects', path: "/projects/", showTitle: true}},
-  {id: 'projects', path: '/projects', next: {id: 'youtube', path: "/projects/", showTitle: true}},
-  {id: 'youtube', path: '/youtube'}
+  {id: 'Introduction', path: '/'}, 
+  {id: 'Youtube', path: '/youtube'},
+  {id: 'Blogs', path: '/blogs'},
+  {id: 'Sketchnotes', path: '/sketchnotes'},
 ]
 
 const StyledPageLink = styled(PageLink)`
@@ -51,12 +52,12 @@ const StyledPageLink = styled(PageLink)`
     }
 
     &._is-active {
-        span span::before {
+        a::before {
             content: '> ';
         }
 
         @media ${mq.smallMedium} {
-            span span::after {
+            a::after {
                 content: ' <';
             }
         }
@@ -69,16 +70,19 @@ const StyledPageLink = styled(PageLink)`
         })}
 `
 
-const NavItem = ({ key, page, currentPath, closeSidebar, isHidden = false, depth = 0 }) => {
-    const isActive = true
-    const hasChildren = false
+const NavItem = ({ page, currentPath, closeSidebar, isHidden = false, depth = 0 }) => {
+  const router = useRouter()
+  console.log('#### nav item', router.pathname, page.path);
+    const isActive = page.path == router.pathname;
+    const hasChildren = page.children && page.children.length > 0
     const displayChildren = hasChildren > 0 && isActive
 
-    console.log('**********nav item page', page);
+    
     return (
         <>
             <StyledPageLink
                 activeClassName="_is-active"
+                className={isActive ? "_is-active" : ""}
                 onClick={closeSidebar}
                 page={page}
                 depth={depth}
@@ -95,7 +99,7 @@ const NavItem = ({ key, page, currentPath, closeSidebar, isHidden = false, depth
                             closeSidebar={closeSidebar}
                             currentPath={currentPath}
                             depth={depth + 1}
-                            isHidden={!displayChildren}
+                            isHidden={false}
                         />
                     ))}
                 </>
@@ -107,7 +111,7 @@ const NavItem = ({ key, page, currentPath, closeSidebar, isHidden = false, depth
 export const Nav = ({ closeSidebar }) => {
     const context = usePageContext()
 
-    console.log('filterednav: ', context.currentPath, closeSidebar);
+    console.log('filterednav: ', filteredNav);
     return (
         <NavContainer>
             {filteredNav.map((page, i) => (

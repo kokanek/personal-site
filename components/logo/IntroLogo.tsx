@@ -133,10 +133,10 @@ export const IntroLogo = () => {
           <Cell size={cellSize} x0={3} x1={2} index={2} delay={1}>
             Sci
                     </Cell>
-          <Cell size={cellSize} x0={3} x1={3} y1={1} index={3} delay={2}>
+          <Cell size={cellSize} x0={3} x1={3} y1={1} index={4} delay={2}>
             Pli
                     </Cell>
-          <Cell size={cellSize} y0={2} y1={1} index={4} color="link" delay={4}>
+          <Cell size={cellSize} y0={2} y1={1} index={3} color="link" delay={4}>
             Sim
                     </Cell>
           <Cell size={cellSize} x0={1} x1={1} y0={2} y1={1} isMainCell delay={6}>
@@ -149,10 +149,10 @@ export const IntroLogo = () => {
             y0={3}
             y1={3}
             color="contrast"
-            index={5}
+            index={6}
             delay={8}
           >
-            fi
+            ed
                     </Cell>
           <Cell
             size={cellSize}
@@ -161,10 +161,10 @@ export const IntroLogo = () => {
             y0={3}
             y1={2}
             color="contrast"
-            index={6}
+            index={5}
             delay={9}
           >
-            ed
+            fi
                     </Cell>
         </g>
       </svg>

@@ -15,7 +15,7 @@ export const LogoCell = ({ index, text, color: textColor }: LogoCellProps) => (
   </Container>
 )
 
-const CellText = styled.text`
+const CellText = styled.span`
     font-weight: 500;
     pointer-events: none;
 `

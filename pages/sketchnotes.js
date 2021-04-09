@@ -1,16 +1,11 @@
 import React, {useState} from 'react';
 import styled, { css, useTheme } from 'styled-components';
 import classNames from 'classnames'
-import Head from "next/head";
 import Pagination from '../components/Pagination';
 import NewsletterBlock from '../components/NewsletterBlock';
 import { Sidebar } from '../components/sidebar';
 import { mq, spacing } from '../theme'
-import { IntroLogo } from '../components/logo/IntroLogo';
-
-import styles from '../styles/Home.module.scss';
-
-const next = {id: 'YouTube', path: '/youtube'}
+import Image from 'next/image'
 
 export default function Home() {
   const [showSidebar, toggleSidebar] = useState(false);
@@ -30,35 +25,30 @@ export default function Home() {
       >
         <Sidebar showSidebar={showSidebar} closeSidebar={closeSidebar} />
         <PageContent className="PageContent">
-          <Pagination toggleSidebar={toggleSidebarState} nextLink={next} position="top" />
+          <Pagination toggleSidebar={toggleSidebarState} position="top"/>
           <PageMain>
-              {/* <PageMetaDebug /> */}
-              <IntroLogo />
-              <h1>Hi There! 👋🏾</h1>
-              <h3>I am <span style={{color: theme.colors.contrast}}>Kapeel Kokane</span>. Welcome to my personal website. Here, you will find the links to some of my content.</h3>
-              <NewsletterBlock 
-                link='/youtube'
-                heading="YouTube Channel" 
-                buttonText="View"
-                description="I create short, animated style videos for those getting strated with JavaScript & other computer science releated topics. Give those a try if you feel like 👇🏽"
+            <h1>I also create one-pager notes called <span style={{color: theme.colors.contrast}}>Sketchnotes</span> like the one below.</h1>
+            <h2>If you like that, you can find and download more for FREE on my <a href="https://gumroad.com/kapeelkokane">gumroad page</a> 🎁</h2>
+            <ImageContainer>
+              <Image
+                src="/prototypal.png"
+                alt="Prototypal inheritance in JavaScript"
+                width={720}
+                height={1080}
               />
-              <NewsletterBlock 
-                link='/blogs'
-                heading="Blogs" 
-                buttonText="View"
-                description="I create blog posts for the Logrocket Blog. I mostly write on the topics related to React, Styled-components & Next.js. Check those out if it interests you 👇🏽"
-              />
-              <NewsletterBlock 
-                heading="Sketchnotes"
-                buttonText="View" 
-                description="I also create single-page #sketchnotes around topics related to Web development. This is where you can find some 👇🏽"
-              />
+            </ImageContainer>
           </PageMain>
         </PageContent>
         </Page>
     </>
   )
 }
+
+const ImageContainer = styled.div`
+  & img {
+    border-radius: 8px;
+  }
+`
 
 const PageContent = styled.main`
     display: flex;
@@ -99,3 +89,5 @@ const PageMain = styled.main`
         padding: ${spacing(3)};
     }
 `
+
+

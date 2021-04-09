@@ -1,7 +1,7 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import Head from "next/head";
 
-const Head = () => {
+const MetaHead = () => {
     // const { getToolName } = useTools()
 
     let overrides = {}
@@ -24,18 +24,18 @@ const Head = () => {
 
     return (
         <>
-            <Helmet meta={mergedMeta} defaultTitle={"Kapeel Kokane"}>
+            <Head meta={mergedMeta} defaultTitle={"Kapeel Kokane"}>
                 <html lang="en" />
                 <title>{"Kapeel Kokane"}</title>
-                <link rel="shortcut icon" href="favicon.png" />
-                <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin />
+                <link rel="icon" type="image/png" href="/favicon.ico" />
+                <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="true" />
                 <link
                     href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,300i,500,600"
                     rel="stylesheet"
                 />
-            </Helmet>
+            </Head>
         </>
     )
 }
 
-export default Head
+export default MetaHead

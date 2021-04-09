@@ -5,7 +5,6 @@ import { LogoCell } from './LogoCell'
 export const SidebarLogo = () => {
     const theme = useTheme()
 
-    console.log('the theme here: ', theme)
     return (
         <Container>
             <LogoCell text="Ka" color={theme.colors.text} index={0} />

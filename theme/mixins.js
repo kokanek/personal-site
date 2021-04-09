@@ -27,31 +27,12 @@ export const fancyLinkMixin = ({ color, activeClassName = '_is-active', activeCo
     text-decoration: none;
     transition: all ease-in 300ms;
 
-    &,
-    &:link,
-    &:visited,
-    &:active,
-    &:focus {
+    a,
+    a:link,
+    a:visited,
+    a:active,
+    a:focus {
         color: ${color};
-        ${textShadowMixin(color)}
-    }
-
-    > span {
-        display: inline-block;
-        position: relative;
-
-        &::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: ${color};
-            transform-origin: bottom right;
-            transform: scaleX(0);
-            transition: transform 0.5s ease;
-        }
     }
 
     &.${activeClassName} {

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 
 const PageLink = ({ page, children, className, activeClassName, onClick }) => (
-  <a className={className} activeClassName={activeClassName}>
-    <Link href={page.path}>
+  <div className={className}>
+    <Link href={page.path} className={activeClassName}>
       <a>{children}</a>
     </Link>
-  </a>
+  </div>
 )
 
 PageLink.propTypes = {

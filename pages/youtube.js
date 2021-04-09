@@ -8,11 +8,17 @@ import { mq, spacing } from '../theme'
 import { IntroLogo } from '../components/logo/IntroLogo';
 import styles from '../styles/Home.module.scss';
 
+const next = {id: 'Blogs', path: '/blogs'}
+
 export default function Home() {
   const [showSidebar, toggleSidebar] = useState(false);
   const theme = useTheme();
 
   const closeSidebar = () => toggleSidebar(false);
+  const toggleSidebarState = () => {
+    console.log('toggle sidebar called');
+    toggleSidebar(!showSidebar)
+  };
 
   return (
     <>
@@ -22,16 +28,25 @@ export default function Home() {
       >
         <Sidebar showSidebar={showSidebar} closeSidebar={closeSidebar} />
         <PageContent className="PageContent">
-          <Pagination toggleSidebar={() => {}} position="top" />
+          <Pagination toggleSidebar={toggleSidebarState} nextLink={next} position="top"/>
           <PageMain>
-              {/* <PageMetaDebug /> */}
-              <IntroLogo />
-              <h1>This is the YouTube content</h1>
-              <h2>This is the h2 content</h2>
-              <h3>This is the h2 content</h3>
-              <h4>This is the h2 content</h4>
-              <p>We'll be doing a special <a href="/test">launch livestream in collaboration</a> with the folks at the <span color="contrast">CodeItLive Twitch</span> channel. Join us along with guests such as Sarah Drasner, Josh W. Comeau, and Kent C. Dodds to discuss this past year's JavaScript trends!</p>
-              <NewsletterBlock heading="Newsletter!" description="this is the best newsletter ever"/>
+            <h1>Here are a few of my popular <span style={{color: theme.colors.contrast}}>YouTube Videos</span></h1>
+            <NewsletterBlock 
+              heading="The Event Loop" 
+              description="In this video, I explain the functioning of the JavaScript Event Loop by getting into the call-stack, the browser APIs and the event queue 👇🏽"
+            />
+            <NewsletterBlock 
+              heading="The JavaScript Engine" 
+              description="In this video, we look into the JS engine and skim over the role that it plays in executing JS code and check out how that process is optimized 👇🏽"
+            />
+            <NewsletterBlock 
+              heading="Promises in JavaScript" 
+              description="In this video, we look into promises and see how they can be made use of, in order to write consice, asynchronous code in JavaScript 👇🏽"
+            />
+            <NewsletterBlock 
+              heading="Other videos" 
+              description="In addition to the ones mentioned above, there are ~50 videos on the channel. Feel free to browse around and watch the ones that you are interested in 👇🏽"
+            />
           </PageMain>
         </PageContent>
         </Page>

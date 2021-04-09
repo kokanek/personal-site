@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import Head from '../components/Head'
+import Head from "next/head";
 import { GlobalStyle } from '../theme';
 import themes from '../theme/themes/index'
 import { mergePageContext } from '../helpers/pageHelpers'
@@ -46,7 +46,6 @@ const ThemedLayout = (props) => {
     return (
         <ThemeProvider theme={themes[themeId]}>
             <GlobalStyle />
-            <Head />
             {props.context.id === 'report' ? <ReportLayout {...props} />:<MainLayout {...props} />}
         </ThemeProvider>
     )
@@ -60,7 +59,11 @@ export default function App({ Component, pageProps }) {
     <>
       <ThemeProvider theme={themes[themeId]}>
         <GlobalStyle />
-        <Head />
+        <Head defaultTitle={"Kapeel Kokane"}>
+          <title>Kapeel Kokane</title>
+          <link rel="shortcut icon" href="/favicon.ico" />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
         <Component {...pageProps} />
       </ThemeProvider>
     </>

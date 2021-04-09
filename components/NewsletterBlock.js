@@ -1,16 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 import { spacing, mq } from '../theme'
+import { useRouter } from 'next/router'
 import Button from './Button';
 
-const NewsletterBlock = () => {
+const NewsletterBlock = ({heading, description, buttonText, link}) => {
+
+    const router = useRouter();
+    
+    const navigate = () => {
+      router.push(link);
+    }
 
     return (
         <Container>
-            <Heading>Stay Tuned</Heading>
-            <Description>If you'd like to know when we release additional results or announce next year's edition, just leave us your email below:</Description>
-            <SubmitButton as="button" type="submit" name="subscribe">
-              Submit
+            <Heading>{heading}</Heading>
+            <Description>{description}</Description>
+            <SubmitButton as="button" onClick={navigate}>
+              {buttonText || 'Submit'}
             </SubmitButton>
         </Container>
     )
@@ -21,8 +28,6 @@ const Container = styled.div`
     margin-bottom: ${spacing(2)};
     border: ${(props) => props.theme.separationBorder};
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
 `
 
 const Heading = styled.h3`

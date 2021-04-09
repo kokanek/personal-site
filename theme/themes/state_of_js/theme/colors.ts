@@ -1,7 +1,7 @@
 import { DefaultTheme } from 'styled-components'
 import colors from '../../../colors'
 
-const stateOfJSThemeColors: DefaultTheme['colors'] = {
+const stateOfJSThemeColors = {
   background: colors.greyDarker,
   backgroundBackground: '#151618',
   backgroundForeground: colors.greyDarkish,

@@ -27,8 +27,9 @@ export default function Home() {
         <PageContent className="PageContent">
           <Pagination toggleSidebar={toggleSidebarState} position="top"/>
           <PageMain>
-            <h1>I also create one-pager notes called <span style={{color: theme.colors.contrast}}>Sketchnotes</span> like the one below.</h1>
-            <h2>If you like that, you can find and download more for FREE on my <a href="https://gumroad.com/kapeelkokane">gumroad page</a> 🎁</h2>
+            <h1>📝 Sketchnotes</h1>
+            <h3>I also create one-pager notes called <span style={{color: theme.colors.contrast}}>Sketchnotes</span> like the one below.</h3>
+            <h3>If you like that, you can find and download more for FREE on my <a href="https://gumroad.com/kapeelkokane">gumroad page</a> 🎁</h3>
             <ImageContainer>
               <Image
                 src="/prototypal.png"

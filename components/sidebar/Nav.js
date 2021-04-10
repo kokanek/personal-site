@@ -7,10 +7,10 @@ import PageLink from '../PageLink'
 import { getPageLabelKey } from '../../helpers/pageHelpers'
 
 const filteredNav = [
-  {id: 'Introduction', path: '/'}, 
-  {id: 'Youtube', path: '/youtube'},
-  {id: 'Blogs', path: '/blogs'},
-  {id: 'Sketchnotes', path: '/sketchnotes'},
+  {id: '👋🏾 Introduction', path: '/'}, 
+  {id: '📹 Youtube', path: '/youtube'},
+  {id: '✍🏼 Blogs', path: '/blogs'},
+  {id: '📝 Sketchnotes', path: '/sketchnotes'},
 ]
 
 const StyledPageLink = styled(PageLink)`

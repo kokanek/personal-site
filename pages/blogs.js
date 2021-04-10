@@ -30,34 +30,35 @@ export default function Home() {
         <PageContent className="PageContent">
           <Pagination toggleSidebar={toggleSidebarState} nextLink={next} position="top" />
           <PageMain>
-            <h1>I blog about some light stuff on <span style={{color: theme.colors.contrast}}>dev.to</span></h1>
+            <h1>🔖 Blogs</h1>
+            <h3>I blog about some light stuff on <span style={{color: theme.colors.contrast}}>dev.to</span></h3>
             <NewsletterBlock 
               buttonText="View"
               link="https://dev.to/comscience"
               heading="My dev.to Blog" 
-              description="The blogs here are mostly short how-to articles, snippets or my newsletter articles 👇🏽"
+              description="The blogs posts here are mostly short, how-to articles, snippets or my newsletter articles 👇🏽"
             />
-            <h1>I also write blog articles for <span style={{color: theme.colors.contrast}}>The Logrocket Blog</span></h1>
+            <h3>I also write detailed, long-form articles for <span style={{color: theme.colors.contrast}}>The Logrocket Blog</span></h3>
             <NewsletterBlock 
-              buttonText="View"
+              buttonText="Read"
               link="https://blog.logrocket.com/push-notifications-with-react-and-firebase/"
               heading="Push notifications with React and Firebase" 
               description="In this article, we create a full-fledged solution for implementing end-to-end notifications in a React app using the Firebase framework 👇🏽"
             />
             <NewsletterBlock 
-              buttonText="View"
+              buttonText="Read"
               link="https://blog.logrocket.com/3d-rendering-in-the-browser-with-react-three-fiber/"
               heading="3d rendering in the browser" 
               description="In this article, we take a look at how to get started with rendering 3d inside of the browser context by using the popular three.js library 👇🏽"
             />
             <NewsletterBlock 
-              buttonText="View"
+              buttonText="Read"
               link="https://blog.logrocket.com/whats-new-in-next-js-10/"
               heading="Next.js 10.0 features" 
               description="In this article, we look into one of the major Next.js releases (10.0) and explore the new features made available with it 👇🏽"
             />
             <NewsletterBlock 
-              buttonText="View"
+              buttonText="Check out"
               link="https://blog.logrocket.com/author/kapeelkokane/"
               heading="Other articles" 
               description="In addition to the ones mentioned above, there are several others that you can find on the Logrocket page 👇🏽"

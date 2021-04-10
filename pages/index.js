@@ -7,6 +7,7 @@ import NewsletterBlock from '../components/NewsletterBlock';
 import { Sidebar } from '../components/sidebar';
 import { mq, spacing } from '../theme'
 import { IntroLogo } from '../components/logo/IntroLogo';
+import BioBlock from '../components/BioBlock';
 
 import styles from '../styles/Home.module.scss';
 

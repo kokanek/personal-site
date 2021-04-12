@@ -60,9 +60,12 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider theme={themes[themeId]}>
         <GlobalStyle />
         <Head defaultTitle={"Kapeel Kokane"}>
-          <title>Kapeel Kokane</title>
+          <title>Kapeel Kokane developer web site</title>
           <link rel="shortcut icon" href="/favicon.ico" />
+          <meta charset="UTF-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta name="robots" content="index, follow" />
+          <meta name="description" content="This is a developer website for Kapeel Kokane. Kapeel Kokane is a programmer, YouTuber and a freelance Blogger." />
         </Head>
         <Component {...pageProps} />
       </ThemeProvider>

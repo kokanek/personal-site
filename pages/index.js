@@ -50,6 +50,7 @@ export default function Home() {
                 description="I create blog posts for the Logrocket Blog. I mostly write on the topics related to React, Styled-components & Next.js. Check those out if it interests you 👇🏽"
               />
               <NewsletterBlock 
+                link='/sketchnotes'
                 heading="Sketchnotes"
                 buttonText="View" 
                 description="I also create single-page #sketchnotes around topics related to Web development. This is where you can find some 👇🏽"

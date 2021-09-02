@@ -36,24 +36,30 @@ export default function Home() {
               {/* <PageMetaDebug /> */}
               <IntroLogo />
               <h1>Hi There! 👋🏾</h1>
-              <h3>I am <span style={{color: theme.colors.contrast}}>Kapeel Kokane</span>. Welcome to my personal website. Here, you will find the links to some of my content.</h3>
+              <h3>I am <span style={{color: theme.colors.contrast}}>Kapeel Kokane</span>. Welcome to my small place on the internet 🙌🏾. Here, you will find the links to some of my content.</h3>
+              <NewsletterBlock 
+                link='https://kapeelkokane.gumroad.com/l/jsillustrated'
+                heading="My Free ebook" 
+                buttonText="Get it now!"
+                description="I put together a collection of my #sketchnotes about a few important JavaScript concepts into a book. Get it for free here! 👇🏽"
+              />
               <NewsletterBlock 
                 link='/youtube'
-                heading="YouTube Channel" 
+                heading="My YouTube Channel" 
                 buttonText="View"
                 description="I create short, animated style videos for those getting strated with JavaScript & other computer science releated topics. Give those a try if you feel like 👇🏽"
               />
               <NewsletterBlock 
                 link='/blogs'
-                heading="Blogs" 
+                heading="My Blogs" 
                 buttonText="View"
                 description="I create blog posts for the Logrocket Blog. I mostly write on the topics related to React, Styled-components & Next.js. Check those out if it interests you 👇🏽"
               />
               <NewsletterBlock 
-                link='/sketchnotes'
-                heading="Sketchnotes"
-                buttonText="View" 
-                description="I also create single-page #sketchnotes around topics related to Web development. This is where you can find some 👇🏽"
+                link='https://sendfox.com/comscience'
+                heading="My Newsletter"
+                buttonText="Join now!" 
+                description="I send a weekly newsletter with a curated collection of JavaScript resources that I find interesting. Feel free to join the list if you'd like the update in your inbox 👇🏽"
               />
           </PageMain>
         </PageContent>

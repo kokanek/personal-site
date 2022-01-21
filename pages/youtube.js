@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 import styled, { css, useTheme } from 'styled-components';
-import classNames from 'classnames'
 import Pagination from '../components/Pagination';
 import NewsletterBlock from '../components/NewsletterBlock';
 import { Sidebar } from '../components/sidebar';
 import { mq, spacing } from '../theme'
-import { IntroLogo } from '../components/logo/IntroLogo';
-import styles from '../styles/Home.module.scss';
+import Head from "next/head";
 
 const next = {id: 'Blogs', path: '/blogs'}
 
@@ -26,12 +24,16 @@ export default function Home() {
         showSidebar={showSidebar}
         theme='DefaultTheme'
       >
+        <Head defaultTitle={"Kapeel Kokane"}>
+          <title>Kapeel Kokane - YouTube videos</title>
+          <meta name="description" content="This page lists some of the prominent YouTube Videos created by Kapeel Kokane." />
+        </Head>
         <Sidebar showSidebar={showSidebar} closeSidebar={closeSidebar} />
         <PageContent className="PageContent">
           <Pagination toggleSidebar={toggleSidebarState} nextLink={next} position="top"/>
           <PageMain>
             <h1>🎥 YouTube Content</h1>
-            <h3>I have been creating content on YouTube on and off for about 3 years now with about 50 videos on the channel.</h3>
+            <h3>I have been creating content on YouTube on and off for about 3 years now with more than 50 videos on the channel.</h3>
             <h3>Here are a few of my popular <span style={{color: theme.colors.contrast}}>YouTube Videos</span></h3>
             <NewsletterBlock 
               buttonText="Watch"

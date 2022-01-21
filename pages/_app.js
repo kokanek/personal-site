@@ -1,17 +1,8 @@
 import {useState} from 'react';
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import Head from "next/head";
 import { GlobalStyle } from '../theme';
 import themes from '../theme/themes/index'
-import { mergePageContext } from '../helpers/pageHelpers'
-import { PageContextProvider } from '../helpers/pageContext'
-
-// const theme = {
-//   colors: {
-//     primary: '#0070f3',
-//   },
-// }
-
 const themeIds = ['state_of_js', 'state_of_css', 'test']
 
 const ThemedLayout = (props) => {
@@ -60,7 +51,7 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider theme={themes[themeId]}>
         <GlobalStyle />
         <Head defaultTitle={"Kapeel Kokane"}>
-          <title>Kapeel Kokane developer web site</title>
+          <title>Kapeel Kokane developer test site</title>
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta charset="UTF-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />

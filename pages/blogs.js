@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import styled, { css, useTheme } from 'styled-components';
 import classNames from 'classnames'
+import Head from "next/head";
 import Pagination from '../components/Pagination';
 import NewsletterBlock from '../components/NewsletterBlock';
 import { Sidebar } from '../components/sidebar';
 import { mq, spacing } from '../theme'
-import { IntroLogo } from '../components/logo/IntroLogo';
-import styles from '../styles/Home.module.scss';
 
 const next = {id: 'Sketchnotes', path: '/sketchnotes'}
 
@@ -26,6 +25,10 @@ export default function Home() {
         showSidebar={showSidebar}
         theme='DefaultTheme'
       >
+        <Head defaultTitle={"Kapeel Kokane"}>
+          <title>Kapeel Kokane - Blogs</title>
+          <meta name="description" content="This page lists some of the prominent blogs written by Kapeel Kokane." />
+        </Head>
         <Sidebar showSidebar={showSidebar} closeSidebar={closeSidebar} />
         <PageContent className="PageContent">
           <Pagination toggleSidebar={toggleSidebarState} nextLink={next} position="top" />

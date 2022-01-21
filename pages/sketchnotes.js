@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import styled, { css, useTheme } from 'styled-components';
-import classNames from 'classnames'
+import Head from "next/head";
 import Pagination from '../components/Pagination';
-import NewsletterBlock from '../components/NewsletterBlock';
 import { Sidebar } from '../components/sidebar';
 import { mq, spacing } from '../theme'
 import Image from 'next/image'
@@ -23,6 +22,10 @@ export default function Home() {
         showSidebar={showSidebar}
         theme='DefaultTheme'
       >
+        <Head defaultTitle={"Kapeel Kokane"}>
+          <title>Kapeel Kokane - Sketchnotes</title>
+          <meta name="description" content="This page lists some of the prominent sketchnotes created by Kapeel Kokane." />
+        </Head>
         <Sidebar showSidebar={showSidebar} closeSidebar={closeSidebar} />
         <PageContent className="PageContent">
           <Pagination toggleSidebar={toggleSidebarState} position="top"/>

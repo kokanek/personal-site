@@ -128,17 +128,17 @@ export const IntroLogo = () => {
       >
         <g transform="translate(2,2)">
           <Cell size={cellSize} x0={2} x1={1} index={1}>
-            Com
-                    </Cell>
+            Co
+          </Cell>
           <Cell size={cellSize} x0={3} x1={2} index={2} delay={1}>
-            Sci
-                    </Cell>
+            de
+          </Cell>
           <Cell size={cellSize} x0={3} x1={3} y1={1} index={4} delay={2}>
-            Pli
-                    </Cell>
+            et
+          </Cell>
           <Cell size={cellSize} y0={2} y1={1} index={3} color="link" delay={4}>
-            Sim
-                    </Cell>
+            Sk
+          </Cell>
           <Cell size={cellSize} x0={1} x1={1} y0={2} y1={1} isMainCell delay={6}>
             👨🏾‍💻
           </Cell>
@@ -153,7 +153,7 @@ export const IntroLogo = () => {
             delay={8}
           >
             ed
-                    </Cell>
+          </Cell>
           <Cell
             size={cellSize}
             x0={3}
@@ -164,8 +164,8 @@ export const IntroLogo = () => {
             index={5}
             delay={9}
           >
-            fi
-                    </Cell>
+            ch
+          </Cell>
         </g>
       </svg>
     </Container>

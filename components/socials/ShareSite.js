@@ -7,18 +7,18 @@ import ShareYouTube from './ShareYouTube'
 
 const ShareSite = () => {
 
-    return (
-        <Container className="ShareSite">
-            <ShareTwitter />
-            <ShareYouTube />
-            <ShareLinkedIn />
-            <ShareEmail subject="Let's connect!"/>
-        </Container>
-    )
+  return (
+    <Container className="ShareSite">
+      <ShareTwitter />
+      <ShareYouTube />
+      <ShareLinkedIn />
+      <ShareEmail subject="Let's connect!" />
+    </Container>
+  )
 }
 
 const Container = styled.div`
-    border-top: ${(props) => props.theme.separationBorder};
+    border: ${(props) => props.theme.separationBorder};
     display: flex;
     justify-content: space-evenly;
     position: relative;

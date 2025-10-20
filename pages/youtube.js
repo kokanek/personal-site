@@ -34,8 +34,8 @@ export default function Home() {
           <Pagination toggleSidebar={toggleSidebarState} nextLink={next} position="top" />
           <PageMain>
             <h1>🎥 YouTube Content</h1>
-            <h3>I have been creating content on YouTube on and off for about 3 years now with more than 60 videos on the channel.</h3><Link href={'https://www.youtube.com/@CodeSketched'}>Link to my channel</Link>
-            <h3>Below are a few of my popular <span style={{ color: theme.colors.contrast }}>YouTube Videos.</span></h3>
+            <p>I have been creating content on YouTube on and off for about 3 years now with more than 60 videos on the channel: <Link href={'https://www.youtube.com/@CodeSketched'}>CodeSketched</Link></p>
+            <p>Below are a few of my popular YouTube Videos.</p>
             <NewsletterBlock
               buttonText="Watch"
               link="https://www.youtube.com/watch?v=mECV6nGOqNo"

@@ -9,40 +9,39 @@ import PaginationLink from './PaginationLink'
 import LanguageSwitcher from '../helpers/LanguageSwitcher'
 
 const Pagination = ({ toggleSidebar, nextLink, prevLink }) => {
-   
-    console.log('next link: ', nextLink);
-    let previous = <span />
-    if (prevLink !== undefined && !isEmpty(prevLink)) {
-        previous = (
-            <PaginationLink
-                className="PaginationPrevious"
-                page={prevLink}
-                type="previous"
-            />
-        )
-    }
 
-    let next = <span />
-    if (nextLink !== undefined && !isEmpty(nextLink)) {
-        next = <PaginationLink className="PaginationNext" page={nextLink} type="next" />
-    }
-
-    return (
-        <Container className="Pagination">
-            {previous}
-            <MiddleContent>
-                <SidebarToggle className="SidebarToggle" onClick={toggleSidebar}>
-                    <Hamburger />
-                </SidebarToggle>
-                <LanguageSwitcher />
-            </MiddleContent>
-            {next}
-        </Container>
+  console.log('next link: ', nextLink);
+  let previous = <span />
+  if (prevLink !== undefined && !isEmpty(prevLink)) {
+    previous = (
+      <PaginationLink
+        className="PaginationPrevious"
+        page={prevLink}
+        type="previous"
+      />
     )
+  }
+
+  let next = <span />
+  if (nextLink !== undefined && !isEmpty(nextLink)) {
+    next = <PaginationLink className="PaginationNext" page={nextLink} type="next" />
+  }
+
+  return (
+    <Container className="Pagination">
+      {previous}
+      <MiddleContent>
+        <SidebarToggle className="SidebarToggle" onClick={toggleSidebar}>
+          <Hamburger />
+        </SidebarToggle>
+      </MiddleContent>
+      {next}
+    </Container>
+  )
 }
 
 Pagination.defaultProps = {
-    toggleSidebar: PropTypes.func.isRequired,
+  toggleSidebar: PropTypes.func.isRequired,
 }
 
 const Container = styled.div`

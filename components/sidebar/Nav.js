@@ -7,10 +7,11 @@ import PageLink from '../PageLink'
 import { getPageLabelKey } from '../../helpers/pageHelpers'
 
 const filteredNav = [
-  {id: '👋🏾 Introduction', path: '/'}, 
-  {id: '📹 Youtube', path: '/youtube'},
-  {id: '✍🏼 Blogs', path: '/blogs'},
-  {id: '📝 Sketchnotes', path: '/sketchnotes'},
+  { id: '👋🏾 Introduction', path: '/' },
+  { id: '📹 Youtube', path: '/youtube' },
+  { id: '✍🏼 Blogs', path: '/blogs' },
+  { id: '📝 Sketchnotes', path: '/sketchnotes' },
+  { id: '📁 Projects', path: '/projects' },
 ]
 
 const StyledPageLink = styled(PageLink)`
@@ -18,9 +19,9 @@ const StyledPageLink = styled(PageLink)`
     white-space: nowrap;
     margin: 0 0 ${spacing(0.33)} 0;
     font-size: ${(props) =>
-        props.depth > 0
-            ? props.theme.typography.size.smallish
-            : props.theme.typography.size.medium};
+    props.depth > 0
+      ? props.theme.typography.size.smallish
+      : props.theme.typography.size.medium};
     font-weight: ${(props) => (props.depth === 0 ? 800 : 400)};
 
     /* & > span {
@@ -43,12 +44,12 @@ const StyledPageLink = styled(PageLink)`
         }
         margin-left: ${(props) => (props.depth > 0 ? spacing() : 0)};
         ${(props) => {
-            if (props.isHidden) {
-                return css`
+    if (props.isHidden) {
+      return css`
                     display: none;
                 `
-            }
-        }}
+    }
+  }}
     }
 
     &._is-active {
@@ -64,66 +65,66 @@ const StyledPageLink = styled(PageLink)`
     }
 
     ${(props) =>
-        fancyLinkMixin({
-            color: props.depth === 0 ? props.theme.colors.link : props.theme.colors.text,
-            activeColor: props.theme.colors.linkActive,
-        })}
+    fancyLinkMixin({
+      color: props.depth === 0 ? props.theme.colors.link : props.theme.colors.text,
+      activeColor: props.theme.colors.linkActive,
+    })}
 `
 
 const NavItem = ({ page, currentPath, closeSidebar, isHidden = false, depth = 0 }) => {
   const router = useRouter()
   console.log('#### nav item', router.pathname, page.path);
-    const isActive = page.path == router.pathname;
-    const hasChildren = page.children && page.children.length > 0
-    const displayChildren = hasChildren > 0 && isActive
+  const isActive = page.path == router.pathname;
+  const hasChildren = page.children && page.children.length > 0
+  const displayChildren = hasChildren > 0 && isActive
 
-    
-    return (
+
+  return (
+    <>
+      <StyledPageLink
+        activeClassName="_is-active"
+        className={isActive ? "_is-active" : ""}
+        onClick={closeSidebar}
+        page={page}
+        depth={depth}
+        isHidden={isHidden}
+      >
+        {page.id}
+      </StyledPageLink>
+      {hasChildren && (
         <>
-            <StyledPageLink
-                activeClassName="_is-active"
-                className={isActive ? "_is-active" : ""}
-                onClick={closeSidebar}
-                page={page}
-                depth={depth}
-                isHidden={isHidden}
-            >
-              {page.id}
-            </StyledPageLink>
-            {hasChildren && (
-                <>
-                    {page.children.map((childPage) => (
-                        <NavItem
-                            key={childPage.id}
-                            page={childPage}
-                            closeSidebar={closeSidebar}
-                            currentPath={currentPath}
-                            depth={depth + 1}
-                            isHidden={false}
-                        />
-                    ))}
-                </>
-            )}
+          {page.children.map((childPage) => (
+            <NavItem
+              key={childPage.id}
+              page={childPage}
+              closeSidebar={closeSidebar}
+              currentPath={currentPath}
+              depth={depth + 1}
+              isHidden={false}
+            />
+          ))}
         </>
-    )
+      )}
+    </>
+  )
 }
 
 export const Nav = ({ closeSidebar }) => {
-    const context = usePageContext()
+  const context = usePageContext()
 
-    console.log('filterednav: ', filteredNav);
-    return (
-        <NavContainer>
-            {filteredNav.map((page, i) => (
-                <NavItem
-                    key={i}
-                    page={page}
-                    currentPath={context.currentPath}
-                    closeSidebar={closeSidebar}
-                />
-            ))}
-        </NavContainer>
-    )
+  console.log('filterednav: ', filteredNav);
+  return (
+    <NavContainer>
+      {filteredNav.map((page, i) => (
+        <NavItem
+          key={i}
+          page={page}
+          currentPath={context.currentPath}
+          closeSidebar={closeSidebar}
+        />
+      ))}
+    </NavContainer>
+  )
 }
 
 const NavContainer = styled.div`

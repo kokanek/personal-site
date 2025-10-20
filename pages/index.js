@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled, { css, useTheme } from 'styled-components';
-import classNames from 'classnames'
 import Head from "next/head";
+import Link from 'next/link'
 import Pagination from '../components/Pagination';
 import NewsletterBlock from '../components/NewsletterBlock';
 import { Sidebar } from '../components/sidebar';
 import { mq, spacing } from '../theme'
-import { IntroLogo } from '../components/logo/IntroLogo';
-import BioBlock from '../components/BioBlock';
-
-import styles from '../styles/Home.module.scss';
+import ShareSite from '../components/socials/ShareSite'
 
 const next = { id: 'YouTube', path: '/youtube' }
 
@@ -38,13 +35,21 @@ export default function Home() {
           <Pagination toggleSidebar={toggleSidebarState} nextLink={next} position="top" />
           <PageMain>
             {/* <PageMetaDebug /> */}
-            <IntroLogo />
+            {/* <IntroLogo /> */}
             <h1>Hi There! 👋🏾</h1>
-            <p>I am <span style={{ color: theme.colors.contrast }}>Kapeel Kokane</span>. I currently work as a full-stack developer at Microsoft.</p>
+            <p>I am <span style={{ color: theme.colors.contrast }}>Kapeel Kokane</span>. I currently work as a senior developer at Microsoft.</p>
 
-            <p>I also like to create content in order to help other who are starting out with their development journey through my videos, blogs and sketchnotes. 🙌🏾. Here, you will find the links to some of my content.</p>
+            <p>With over 11 years of experience, I excel at creating high-quality, scalable applications, services, and interfaces</p>
+
+            <p>I also like to create content in order to help other who are starting out with their development journey through my videos, blogs and sketchnotes. You can find them here: <Link href={'https://www.codesketched.com'}>codesketched.com</Link></p>
+
+            <h1>My socials 👇🏾</h1>
+            <ShareSite />
+
+            <h1 style={{ marginTop: '1.5rem' }}>My content 📝</h1>
+
             <NewsletterBlock
-              link='https://kapeelkokane.gumroad.com/l/jsillustrated/blirvwg'
+              link='https://codesketched.gumroad.com/l/jsillustrated/blirvwg'
               heading="My Free ebook"
               buttonText="Get it now!"
               description="I put together a collection of my #sketchnotes about a few important JavaScript concepts into a book. Get it for free here! 👇🏽"

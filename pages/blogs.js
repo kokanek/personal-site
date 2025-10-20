@@ -41,7 +41,7 @@ export default function Home() {
               heading="My dev.to Blog"
               description="The blogs posts here are mostly short, how-to articles, snippets or my newsletter articles 👇🏽"
             />
-            <h3>I also write detailed, long-form articles for <span style={{ color: theme.colors.contrast }}>The Logrocket Blog</span></h3>
+            <h3>I also write detailed, long-form articles for <Link href={'https://blog.logrocket.com/author/kapeelkokane/'}>The Logrocket Blog</Link></h3>
             <NewsletterBlock
               buttonText="Read"
               link="https://blog.logrocket.com/modern-guide-react-state-patterns/"

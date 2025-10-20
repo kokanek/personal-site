@@ -6,6 +6,8 @@ import { Sidebar } from '../components/sidebar';
 import { mq, spacing } from '../theme'
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 
+const next = { id: 'Projects', path: '/projects' }
+
 const tweets = [
   '1673284957798641665',
   '1673373449245409297',
@@ -51,7 +53,6 @@ export default function Home() {
 
   const closeSidebar = () => toggleSidebar(false);
   const toggleSidebarState = () => {
-    console.log('toggle sidebar called');
     toggleSidebar(!showSidebar)
   };
 
@@ -67,11 +68,11 @@ export default function Home() {
         </Head>
         <Sidebar showSidebar={showSidebar} closeSidebar={closeSidebar} />
         <PageContent className="PageContent">
-          <Pagination toggleSidebar={toggleSidebarState} position="top" />
+          <Pagination toggleSidebar={toggleSidebarState} position="top" nextLink={next} />
           <PageMain>
             <h1>📝 Sketchnotes</h1>
-            <h3>I also create <span style={{ color: theme.colors.contrast }}>Sketchnotes</span> and <span style={{ color: theme.colors.contrast }}>Code snippets</span> about Web development like the ones below.</h3>
-            <h3>If you like that, you can find and download more for FREE on my <a href="https://gumroad.com/kapeelkokane">gumroad page</a> 🎁</h3>
+            <p>I also create <span style={{ color: theme.colors.contrast }}>Sketchnotes</span> and <span style={{ color: theme.colors.contrast }}>Code snippets</span> about Web development like the ones below.</p>
+            <p>If you like that, you can find and download more for FREE on my <a href="https://codesketched.gumroad.com/">gumroad page</a>.</p>
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
               {tweets.map((tweetId) => (
                 <div style={{ minWidth: 400, padding: 4, flexGrow: 1, flexShrink: 1 }}>

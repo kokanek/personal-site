@@ -6,21 +6,45 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "next"
   ],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 12,
-    "sourceType": "module"
+    "sourceType": "module",
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["next/babel"]
+    }
   },
   "plugins": [
     "react"
   ],
   "rules": {
-    "react/prop-types": [
-      "disabled"
-    ]
-  }
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-key": "warn",
+    "no-unused-vars": "warn",
+    "no-undef": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "extends": [
+        "eslint:recommended",
+        "@typescript-eslint/recommended"
+      ]
+    }
+  ]
 }

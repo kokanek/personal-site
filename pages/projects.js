@@ -57,13 +57,6 @@ export default function Home() {
             />
             <ProjectBlock
               text="Check it out"
-              link="https://excalinote.vercel.app/"
-              github={"https://github.com/kokanek/excali-note"}
-              heading="Excalinote"
-              description="This is an app that allows users to create notebooks with pages as the excalidraw canvas."
-            />
-            <ProjectBlock
-              text="Check it out"
               link="https://log-journal.vercel.app/"
               heading="Log Journal"
               description="A journalling app that lets users capture theirs logs throughout the day with tagging support. Uses a redis backend."

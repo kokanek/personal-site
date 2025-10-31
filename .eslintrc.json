@@ -18,7 +18,9 @@
     "sourceType": "module",
     "requireConfigFile": false,
     "babelOptions": {
-      "presets": ["next/babel"]
+      "presets": [
+        "next/babel"
+      ]
     }
   },
   "plugins": [
@@ -38,9 +40,14 @@
   },
   "overrides": [
     {
-      "files": ["**/*.ts", "**/*.tsx"],
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
       "parser": "@typescript-eslint/parser",
-      "plugins": ["@typescript-eslint"],
+      "plugins": [
+        "@typescript-eslint"
+      ],
       "extends": [
         "eslint:recommended",
         "@typescript-eslint/recommended"
